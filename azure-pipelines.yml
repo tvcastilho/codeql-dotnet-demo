@@ -18,5 +18,5 @@ steps:
     projects: '**/*.csproj'
 
 - script: |
-   ./codeql-runner-linux init --repository octodemo/ghas-azure-devops-code-scanning --github-url https://github.com --github-auth $GITHUB_PAT
+   ./codeql-runner-linux init --repository tvcastilho/codeql-dotnet-demo --github-url https://github.com --github-auth $GITHUB_PAT
   displayName: 'Initialize CodeQL Executable and create a CodeQL database'
