@@ -41,11 +41,11 @@ steps:
           Write-Host "Code QL analysis for windows downloaded, now we init it"
           cd $(Build.SourcesDirectory)
           pwd 
-          & ./codeql-runner-win.exe init --github-url https://github.com --repository tvcastilho/codeql-dotnet-demo --github-auth $(github_pat2) --languages csharp
+          & ./codeql-runner-win.exe init --github-url https://github.com --repository tvcastilho/codeql-dotnet-demo --github-auth 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  --languages csharp
          
           cat $(Build.SourcesDirectory)\codeql-runner\codeql-env.sh | Invoke-Expression
           dotnet restore
           dotnet build
           Write-Host "Analyzing with codeql"
-          & ./codeql-runner-win.exe analyze --github-url https://github.com --repository alkampfergit/fantastic-log-library --github-auth $(github_pat2) --commit $(Build.SourceVersion) --ref $(Build.SourceBranch)
+          & ./codeql-runner-win.exe analyze --github-url https://github.com --repository alkampfergit/fantastic-log-library --github-auth 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 --commit $(Build.SourceVersion) --ref $(Build.SourceBranch)
   displayName: Analyze with code QL
