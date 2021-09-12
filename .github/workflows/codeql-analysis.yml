@@ -63,9 +63,19 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
 
-    - run: |
-      dotnet restore
-      dotnet build
+    # - run: |
+    #   dotnet restore
+    #   dotnet build
+    
+    - if: matrix.language == 'cpp' || matrix.language == 'php' 
+      name: Autobuild
+      uses: github/codeql-action/autobuild@v1
+
+    - if: matrix.language == 'csharp' 
+      name: Build C#
+      run: |
+        dotnet restore
+        dotnet build
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
