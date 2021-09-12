@@ -27,5 +27,5 @@ steps:
   displayName: 'Initialize CodeQL Executable and create a CodeQL database'
 
 - script: |
-   ./codeql-runner-linux analyze --repository tvcastilho/codeql-dotnet-demo --github-url https://github.com --github-auth $GITHUB_PAT --commit a6a9a6a5f4e941b04934997f4e7a75a034a440af --ref refs/heads/main
+   ./codeql-runner-linux analyze --repository tvcastilho/codeql-dotnet-demo --github-url https://github.com --github-auth $(GITHUB_PAT) --commit 0d60c02d98442dc2a9ac94f00509536c4970fb52 --ref refs/heads/main
   displayName: 'Populate the CodeQL runner databases, analyze them, and upload the results to GitHub.'
