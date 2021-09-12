@@ -23,7 +23,7 @@ steps:
   displayName: 'Get latest CodeQL package. Install on Agent.'
 
 - script: |
-   ./codeql-runner-linux init --repository tvcastilho/codeql-dotnet-demo --github-url https://github.com --github-auth $(github_pat2)
+   ./codeql-runner-linux init --languages csharp --repository tvcastilho/codeql-dotnet-demo --github-url https://github.com --github-auth $(github_pat2)
   displayName: 'Initialize CodeQL Executable and create a CodeQL database'
 
 - script: |
