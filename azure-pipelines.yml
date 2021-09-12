@@ -18,6 +18,11 @@ steps:
     projects: '**/*.csproj'
 
 - script: |
+   wget https://github.com/github/codeql-action/releases/download/codeql-bundle-20200826/codeql-runner-linux
+   chmod +x codeql-runner-linux
+  displayName: 'Get latest CodeQL package. Install on Agent.'
+
+- script: |
    ./codeql-runner-linux init --repository tvcastilho/codeql-dotnet-demo --github-url https://github.com --github-auth $(GITHUB_PAT)
   displayName: 'Initialize CodeQL Executable and create a CodeQL database'
 
